@@ -1,11 +1,12 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
-
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-
 	theme: {
 		extend: {
+			screens: {
+				1200: '1200px'
+			},
 			colors: {
 				border: 'hsl(var(--border) / <alpha-value>)',
 				primary: {
@@ -25,11 +26,11 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
+				figtree: ['Figtree', ...fontFamily.sans],
 				inter: ['Inter', ...fontFamily.sans],
 				bigola: ['BigolaDisplay', ...fontFamily.sans]
 			}
 		}
 	},
-
 	plugins: []
 } satisfies Config;
