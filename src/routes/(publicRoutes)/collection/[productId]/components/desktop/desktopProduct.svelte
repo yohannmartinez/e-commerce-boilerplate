@@ -5,15 +5,17 @@
 	import IconReturn from '~icons/tabler/arrow-left';
 	import Text from '@/components/text/text.svelte';
 	import Media from '@/components/media/media.svelte';
+	import SimilarProducts from './similarProducts/similarProducts.svelte';
 
 	export let product: ProductWithMedias;
+	export let similarProducts: ProductWithMedias[];
 </script>
 
 <div class="h-20 border-b"></div>
 
 <div class="mx-14 mt-20 flex flex-col items-center justify-center">
 	<div class="w-full max-w-7xl">
-		<div class="flex w-full flex-col">
+		<div class="flex w-full flex-col px-5">
 			<div class="flex items-center gap-3">
 				<a
 					href="/collection"
@@ -25,10 +27,10 @@
 			<Title twClass="mt-3">{product.name}</Title>
 		</div>
 
-		<div class="my-20 flex w-full gap-5">
+		<div class="my-20 flex w-full gap-5 px-5">
 			<div class="grid h-fit flex-1 grid-cols-1 gap-5 rounded-xl lg:grid-cols-2">
 				{#each product.productMedias as media}
-					<div class="1200:h-[500px] h-[500px] overflow-hidden rounded-xl lg:h-[350px]">
+					<div class="h-[500px] overflow-hidden rounded-xl lg:h-[350px] 1200:h-[500px]">
 						<Media productMedia={media} />
 					</div>
 				{/each}
@@ -36,5 +38,7 @@
 
 			<ProductInfo {product} />
 		</div>
+
+		<SimilarProducts {similarProducts} />
 	</div>
 </div>

@@ -18,4 +18,5 @@ export type ProductMedia = {
 	productId: number;
 	link: string;
 	type: 'image' | 'video';
+	displayOrder: number;
 };

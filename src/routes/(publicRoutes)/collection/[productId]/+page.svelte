@@ -6,10 +6,11 @@
 
 	export let data: PageData;
 	$: product = data.product;
+	$: similarProducts = data.similarProducts;
 </script>
 
 {#if $isMobile}
 	<MobileProduct {product} />
 {:else}
-	<DesktopProduct {product} />
+	<DesktopProduct {product} {similarProducts} />
 {/if}
